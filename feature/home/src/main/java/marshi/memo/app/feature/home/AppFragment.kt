@@ -1,4 +1,4 @@
-package marshi.app.feature.home
+package marshi.memo.app.feature.home
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import dagger.android.support.DaggerFragment
 import dagger.hilt.android.AndroidEntryPoint
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.AppFragmentBinding
-import marshi.app.core.ViewModelFactory
+import marshi.memo.app.core.ViewModelFactory
 import javax.inject.Inject
 
 @AndroidEntryPoint

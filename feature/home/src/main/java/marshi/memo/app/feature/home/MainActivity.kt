@@ -1,4 +1,4 @@
-package marshi.app.feature.home
+package marshi.memo.app.feature.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

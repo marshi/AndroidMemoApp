@@ -1,4 +1,4 @@
-package marshi.app.core
+package marshi.memo.app.core
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
