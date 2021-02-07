@@ -1,0 +1,73 @@
+import marshi.app.Dep
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "dagger.hilt.android.plugin"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.androidtemplate"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation project(":data")
+    implementation project(":core")
+    implementation project(":feature:home")
+
+    implementation Dep.kotlin
+    implementation Dep.appCompat
+    implementation Dep.coreKtx
+    implementation Dep.activityKtx
+    implementation Dep.collectionKtx
+    implementation Dep.fragmentKtx
+
+    // lifecycle
+    implementation Dep.lifecycleLiveDataCoreKtx
+    implementation Dep.lifecycleLiveDataKtx
+
+    implementation Dep.lifecycleReactiveStreamsKtx
+    implementation Dep.lifecycleRuntimeKtx
+    implementation Dep.lifecycleViewModelKtx
+    implementation Dep.legacySupport
+    implementation Dep.lifecycleExtension
+
+    // test
+    testImplementation Dep.junit4
+    androidTestImplementation Dep.androidxJunit
+    androidTestImplementation Dep.espresso
+
+    // dagger
+    implementation Dep.daggerAndroid
+    implementation Dep.daggerAndroidSupport
+    kapt Dep.daggerCompiler
+    kapt Dep.daggerAndroidProcessor
+    implementation Dep.daggerHiltAndroid
+    kapt Dep.daggerHiltAndroidCompiler
+
+    // coroutine
+    implementation Dep.kotlinCoroutinesCore
+}
