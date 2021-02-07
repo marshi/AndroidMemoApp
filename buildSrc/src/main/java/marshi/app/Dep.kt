@@ -3,6 +3,7 @@ package marshi.app
 object Dep {
   const val daggerVersion = "2.31"
   const val kotlinVersion = "1.4.30"
+  const val groupieVersion = "2.8.1"
 
   const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
   const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4"
@@ -32,7 +33,10 @@ object Dep {
   const val daggerHiltAndroidCompiler =
     "com.google.dagger:hilt-android-compiler:${daggerVersion}-alpha"
   const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
-  const val hiltCompiler= "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+  const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+
+  const val groupie = "com.xwray:groupie:${groupieVersion}"
+  const val groupieViewBinding = "com.xwray:groupie-viewbinding:$groupieVersion"
 
   const val junit4 = "junit:junit:4.+"
   const val androidxJunit = "androidx.test.ext:junit:1.1.2"

@@ -1,15 +1,14 @@
 package marshi.memo.app.feature.home
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import dagger.android.support.DaggerFragment
 import dagger.hilt.android.AndroidEntryPoint
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.AppFragmentBinding
-import marshi.memo.app.core.ViewModelFactory
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AppFragment : Fragment(R.layout.app_fragment) {
@@ -18,13 +17,28 @@ class AppFragment : Fragment(R.layout.app_fragment) {
     fun newInstance() = AppFragment()
   }
 
-//  @Inject
+  //  @Inject
 //  lateinit var viewModelFactory: ViewModelFactory<AppViewModel>
   private val viewModel: AppViewModel by viewModels() // { viewModelFactory }
-  private lateinit var binding: AppFragmentBinding
+  private var _binding: AppFragmentBinding? = null
+  private val binding get() = _binding!!
+
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
+    _binding = AppFragmentBinding.inflate(inflater, container, false)
+    return binding.root
+  }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    binding = AppFragmentBinding.bind(view)
+    binding.recyclerView.adapter = MemoListAdapter()
+  }
+
+  override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
   }
 }
