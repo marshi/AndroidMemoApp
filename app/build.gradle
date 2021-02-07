@@ -44,6 +44,7 @@ dependencies {
     implementation Dep.activityKtx
     implementation Dep.collectionKtx
     implementation Dep.fragmentKtx
+    implementation Dep.material
 
     // lifecycle
     implementation Dep.lifecycleLiveDataCoreKtx
