@@ -1,4 +1,4 @@
-package marshi.app.feature.home
+package marshi.memo.app.feature.home
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel

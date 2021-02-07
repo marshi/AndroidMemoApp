@@ -1,4 +1,4 @@
-package marshi.app.feature.home
+package marshi.memo.app.feature.home
 
 import dagger.Module
 import dagger.hilt.InstallIn

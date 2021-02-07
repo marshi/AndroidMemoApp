@@ -1,4 +1,4 @@
-package marshi.app
+package marshi.memo.app
 
 import dagger.Component
 import dagger.android.AndroidInjector

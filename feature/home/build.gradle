@@ -33,7 +33,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
+    viewBinding {
         enabled = true
     }
 }
@@ -57,6 +57,9 @@ dependencies {
     kapt Dep.daggerAndroidProcessor
     implementation Dep.hiltLifecycleViewModel
     kapt Dep.hiltCompiler
+
+    implementation Dep.groupie
+    implementation Dep.groupieViewBinding
 
     testImplementation Dep.junit4
     androidTestImplementation Dep.androidxJunit

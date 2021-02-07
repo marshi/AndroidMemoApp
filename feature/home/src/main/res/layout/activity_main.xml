@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="marshi.app.feature.home.MainActivity">
+    tools:context="marshi.memo.app.feature.home.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/app_fragment"
-        android:name="marshi.app.feature.home.AppFragment"
+        android:name="marshi.memo.app.feature.home.AppFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
