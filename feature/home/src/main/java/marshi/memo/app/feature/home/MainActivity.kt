@@ -1,11 +1,9 @@
 package marshi.memo.app.feature.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI
 import dagger.hilt.android.AndroidEntryPoint
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.ActivityMainBinding
@@ -30,7 +28,18 @@ class MainActivity : AppCompatActivity() {
   override fun onStart() {
     super.onStart()
     val navController = findNavController(R.id.nav_host_fragment)
-    val appBarConfiguration = AppBarConfiguration(navController.graph)
-    binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+    NavigationUI.setupActionBarWithNavController(this, navController)
+//    binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+//    binding.toolbar.setOnMenuItemClickListener { listener ->
+//      println(listener)
+//      true
+//    }
+  }
+
+  override fun onSupportNavigateUp(): Boolean {
+    if (onBackPressedDispatcher.hasEnabledCallbacks()) {
+      onBackPressedDispatcher.onBackPressed()
+    }
+    return true
   }
 }
