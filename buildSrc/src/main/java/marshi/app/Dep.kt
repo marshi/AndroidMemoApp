@@ -4,9 +4,11 @@ object Dep {
   const val daggerVersion = "2.31"
   const val kotlinVersion = "1.4.30"
   const val groupieVersion = "2.8.1"
+  const val navVersion = "2.3.3"
 
   const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
   const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4"
+  const val kotlinCoroutinesAndroid = "org.jetbrains.kotlin:kotlinx-coroutines-android:1.3.21"
 
   const val coreKtx = "androidx.core:core-ktx:1.3.2"
   const val appCompat = "androidx.appcompat:appcompat:1.2.0"
@@ -37,6 +39,13 @@ object Dep {
 
   const val groupie = "com.xwray:groupie:${groupieVersion}"
   const val groupieViewBinding = "com.xwray:groupie-viewbinding:$groupieVersion"
+
+  const val navigationFragment = "androidx.navigation:navigation-fragment:$navVersion"
+  const val navigationUi = "androidx.navigation:navigation-ui:$navVersion"
+
+  // Kotlin
+  const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navVersion"
+  const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:$navVersion"
 
   const val junit4 = "junit:junit:4.+"
   const val androidxJunit = "androidx.test.ext:junit:1.1.2"
