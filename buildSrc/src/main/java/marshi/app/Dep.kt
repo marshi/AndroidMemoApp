@@ -5,6 +5,18 @@ object Dep {
   const val kotlinVersion = "1.4.30"
   const val groupieVersion = "2.8.1"
   const val navVersion = "2.3.3"
+  const val roomVersion = "2.2.6"
+
+  object Release {
+    const val versionCode = 1
+    const val versionName = "1.0"
+  }
+
+  const val compileSdkVersion = 30
+  const val targetSdkVersion = 30
+  const val minSdkVersion = 23
+  const val buildToolVersion = "30.0.2"
+
 
   const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
   const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4"
@@ -14,11 +26,15 @@ object Dep {
   const val appCompat = "androidx.appcompat:appcompat:1.2.0"
   const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
   const val activityKtx = "androidx.activity:activity-ktx:1.1.0"
-  const val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.5"
+  const val fragmentKtx = "androidx.fragment:fragment-ktx:1.3.0"
   const val material = "com.google.android.material:material:1.3.0"
   const val collectionKtx = "androidx.collection:collection-ktx:1.1.0"
   const val lifecycleLiveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.0-rc01"
   const val lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-rc01"
+
+  const val roomRuntime = "androidx.room:room-runtime:$roomVersion"
+  const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
+  const val roomKtx = "androidx.room:room-ktx:$roomVersion"
 
   const val lifecycleReactiveStreamsKtx =
     "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.3.0-rc01"

@@ -1,0 +1,30 @@
+import marshi.app.Dep
+
+android {
+    compileSdkVersion Dep.compileSdkVersion
+    buildToolsVersion Dep.buildToolVersion
+
+    defaultConfig {
+        minSdkVersion Dep.minSdkVersion
+        targetSdkVersion Dep.targetSdkVersion
+        versionCode Dep.Release.versionCode
+        versionName Dep.Release.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
