@@ -1,19 +1,16 @@
 package marshi.memo.app.feature.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.activity.addCallback
-import androidx.navigation.Navigation
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigator
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.ActivityMainBinding
+import javax.inject.Inject
+import javax.inject.Named
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

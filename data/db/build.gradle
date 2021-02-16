@@ -17,6 +17,12 @@ dependencies {
     androidTestImplementation Dep.androidxJunit
     androidTestImplementation Dep.espresso
 
+    // dagger
+    implementation Dep.daggerHiltLifecycleViewModel
+    kapt Dep.daggerHiltCompiler
+    implementation Dep.daggerHiltAndroid
+    kapt Dep.daggerHiltAndroidCompiler
+
     // room
     implementation Dep.roomRuntime
     kapt Dep.roomCompiler

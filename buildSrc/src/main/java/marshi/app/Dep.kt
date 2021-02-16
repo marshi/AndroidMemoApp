@@ -43,15 +43,12 @@ object Dep {
   const val legacySupport = "androidx.legacy:legacy-support-v4:1.0.0"
   const val lifecycleExtension = "androidx.lifecycle:lifecycle-extensions:2.2.0"
 
-  const val daggerAndroid = "com.google.dagger:dagger-android:${daggerVersion}"
-  const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${daggerVersion}"
-  const val daggerCompiler = "com.google.dagger:dagger-compiler:${daggerVersion}"
-  const val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${daggerVersion}"
+  // dagger
   const val daggerHiltAndroid = "com.google.dagger:hilt-android:${daggerVersion}-alpha"
   const val daggerHiltAndroidCompiler =
     "com.google.dagger:hilt-android-compiler:${daggerVersion}-alpha"
-  const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
-  const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+  const val daggerHiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
+  const val daggerHiltCompiler = "androidx.hilt:hilt-compiler:1.0.0-alpha02"
 
   const val groupie = "com.xwray:groupie:${groupieVersion}"
   const val groupieViewBinding = "com.xwray:groupie-viewbinding:$groupieVersion"

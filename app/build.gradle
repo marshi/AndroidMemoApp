@@ -10,7 +10,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.example.androidtemplate"
+        applicationId "marshi.memo"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
@@ -22,6 +22,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -62,13 +67,14 @@ dependencies {
     androidTestImplementation Dep.espresso
 
     // dagger
-    implementation Dep.daggerAndroid
-    implementation Dep.daggerAndroidSupport
-    kapt Dep.daggerCompiler
-    kapt Dep.daggerAndroidProcessor
+    implementation Dep.daggerHiltLifecycleViewModel
+    kapt Dep.daggerHiltCompiler
     implementation Dep.daggerHiltAndroid
     kapt Dep.daggerHiltAndroidCompiler
 
     // coroutine
     implementation Dep.kotlinCoroutinesCore
+
+    // room
+    implementation Dep.roomKtx
 }

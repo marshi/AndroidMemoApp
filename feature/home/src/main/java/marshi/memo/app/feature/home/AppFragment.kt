@@ -18,7 +18,7 @@ class AppFragment : Fragment(R.layout.app_fragment) {
     fun newInstance() = AppFragment()
   }
 
-  //  @Inject
+//  @Inject
 //  lateinit var viewModelFactory: ViewModelFactory<AppViewModel>
   private val viewModel: AppViewModel by viewModels() // { viewModelFactory }
   private var _binding: AppFragmentBinding? = null
