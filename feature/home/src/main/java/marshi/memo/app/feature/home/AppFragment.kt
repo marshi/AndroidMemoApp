@@ -40,7 +40,6 @@ class AppFragment : Fragment(R.layout.app_fragment) {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     binding.recyclerView.adapter = MemoListAdapter()
-
     binding.fab.setOnClickListener {
       findNavController().navigate(R.id.action_appFragment_to_editorFragment)
     }

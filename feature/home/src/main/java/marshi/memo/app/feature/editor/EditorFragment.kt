@@ -32,7 +32,7 @@ class EditorFragment : Fragment() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     requireActivity().onBackPressedDispatcher.addCallback {
-      viewModel.insert(binding.textInputEditMemoText.text.toString())
+      viewModel.insert(binding.editText.text.toString())
       findNavController().popBackStack()
     }
   }
@@ -40,7 +40,12 @@ class EditorFragment : Fragment() {
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View? {
-    return inflater.inflate(R.layout.editor_fragment, container, false)
+  ): View {
+    return binding.root
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    println("aiueo")
   }
 }
