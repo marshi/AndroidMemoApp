@@ -5,4 +5,6 @@ import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
 class AppViewModel @ViewModelInject constructor() : ViewModel() {
+
+
 }

@@ -4,6 +4,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -40,8 +41,10 @@ android {
 
 dependencies {
     implementation project(':core')
+    implementation project(':data:db')
 
     implementation Dep.kotlin
+//    implementation Dep.kotlinCoroutinesAndroid
     implementation Dep.coreKtx
     implementation Dep.appCompat
     implementation Dep.constraintLayout
@@ -50,16 +53,24 @@ dependencies {
     implementation Dep.activityKtx
     implementation Dep.fragmentKtx
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
     // dagger
-    implementation Dep.daggerAndroid
-    implementation Dep.daggerAndroidSupport
-    kapt Dep.daggerCompiler
-    kapt Dep.daggerAndroidProcessor
-    implementation Dep.hiltLifecycleViewModel
-    kapt Dep.hiltCompiler
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation Dep.daggerHiltLifecycleViewModel
+    kapt Dep.daggerHiltCompiler
+    implementation Dep.daggerHiltAndroid
+    kapt Dep.daggerHiltAndroidCompiler
 
     implementation Dep.groupie
     implementation Dep.groupieViewBinding
+
+    implementation Dep.navigationFragment
+    implementation Dep.navigationFragmentKtx
+    implementation Dep.navigationUi
+    implementation Dep.navigationUiKtx
 
     testImplementation Dep.junit4
     androidTestImplementation Dep.androidxJunit

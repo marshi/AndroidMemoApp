@@ -1,5 +1,6 @@
 rootProject.name='AndroidTemplate'
+
+include ':data:db'
 include ':core'
 include ':feature:home'
 include ':app'
-include ':data'

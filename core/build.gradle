@@ -6,6 +6,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+repositories {
+    mavenCentral()
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -42,10 +46,11 @@ dependencies {
     implementation Dep.appCompat
     implementation Dep.material
 
-    implementation Dep.daggerAndroid
-    implementation Dep.daggerAndroidSupport
-    kapt Dep.daggerCompiler
-    kapt Dep.daggerAndroidProcessor
+    // dagger
+    implementation Dep.daggerHiltLifecycleViewModel
+    kapt Dep.daggerHiltCompiler
+    implementation Dep.daggerHiltAndroid
+    kapt Dep.daggerHiltAndroidCompiler
 
     testImplementation Dep.junit4
     androidTestImplementation Dep.androidxJunit

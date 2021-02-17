@@ -1,0 +1,30 @@
+import marshi.app.Dep
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: file("${rootDir}/gradle/shared_build.gradle")
+
+dependencies {
+    implementation Dep.kotlin
+    implementation Dep.coreKtx
+    implementation Dep.appCompat
+    implementation Dep.material
+    testImplementation Dep.junit4
+    androidTestImplementation Dep.androidxJunit
+    androidTestImplementation Dep.espresso
+
+    // dagger
+    implementation Dep.daggerHiltLifecycleViewModel
+    kapt Dep.daggerHiltCompiler
+    implementation Dep.daggerHiltAndroid
+    kapt Dep.daggerHiltAndroidCompiler
+
+    // room
+    implementation Dep.roomRuntime
+    kapt Dep.roomCompiler
+    implementation Dep.roomKtx
+}
