@@ -1,6 +1,6 @@
 package marshi.memo.app.feature.home
 
-import marshi.memo.app.core.domain.model.MemoModel
+import dev.marshi.memo.core.domain.model.MemoModel
 
 data class MemoListUiModel(
   val memos: List<MemoModel>

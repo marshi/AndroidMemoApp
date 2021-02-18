@@ -5,7 +5,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.MemoListItemBinding
-import marshi.memo.app.core.domain.model.MemoModel
+import dev.marshi.memo.core.domain.model.MemoModel
 
 class MemoListItem(private val model: MemoModel) : BindableItem<MemoListItemBinding>(
   model.id.toLong()

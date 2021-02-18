@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import marshi.memo.app.core.domain.repository.MemoRepository
+import dev.marshi.memo.core.domain.repository.MemoRepository
 
 class AppViewModel @ViewModelInject constructor(
   private val repository: MemoRepository

@@ -1,7 +1,7 @@
-package marshi.memo.app.core.domain.repository
+package dev.marshi.memo.core.domain.repository
 
 import kotlinx.coroutines.flow.Flow
-import marshi.memo.app.core.domain.model.MemoModel
+import dev.marshi.memo.core.domain.model.MemoModel
 
 interface MemoRepository {
 

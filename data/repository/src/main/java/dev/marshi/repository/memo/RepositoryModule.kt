@@ -4,7 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import marshi.memo.app.core.domain.repository.MemoRepository
+import dev.marshi.memo.core.domain.repository.MemoRepository
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
