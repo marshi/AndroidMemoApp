@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.core.domain.repository.MemoRepository
-import marshi.memo.data.db.memo.MemoDao
+import dev.marshi.memo.data.db.memo.MemoDao
 import javax.inject.Inject
 
 class MemoDataSource @Inject constructor(

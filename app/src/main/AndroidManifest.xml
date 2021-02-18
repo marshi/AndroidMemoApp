@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light">
         <activity
-            android:name="marshi.memo.app.feature.home.MainActivity"
+            android:name="dev.marshi.memo.feature.home.MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
