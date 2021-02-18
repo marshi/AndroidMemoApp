@@ -1,11 +1,15 @@
 package marshi.memo.app.feature.home
 
 import android.view.View
+import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
 import dev.marshi.feature.home.R
 import dev.marshi.feature.home.databinding.MemoListItemBinding
+import marshi.memo.app.core.domain.model.MemoModel
 
-class MemoListItem(val model: MemoModel) : BindableItem<MemoListItemBinding>() {
+class MemoListItem(private val model: MemoModel) : BindableItem<MemoListItemBinding>(
+  model.id.toLong()
+) {
   override fun bind(viewBinding: MemoListItemBinding, position: Int) {
     viewBinding.memo.text = model.text
   }
