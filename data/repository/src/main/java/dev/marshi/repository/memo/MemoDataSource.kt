@@ -2,9 +2,9 @@ package dev.marshi.repository.memo
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import marshi.memo.app.core.domain.model.MemoModel
-import marshi.memo.app.core.domain.repository.MemoRepository
-import marshi.memo.data.db.memo.MemoDao
+import dev.marshi.memo.core.domain.model.MemoModel
+import dev.marshi.memo.core.domain.repository.MemoRepository
+import dev.marshi.memo.data.db.memo.MemoDao
 import javax.inject.Inject
 
 class MemoDataSource @Inject constructor(

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/appFragment"
-        android:name="marshi.memo.app.feature.home.AppFragment"
+        android:name="dev.marshi.memo.feature.home.AppFragment"
         android:label="app_fragment"
         tools:layout="@layout/app_fragment">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/editorFragment"
-        android:name="marshi.memo.app.feature.editor.EditorFragment"
+        android:name="dev.marshi.memo.feature.editor.EditorFragment"
         android:label="editor_fragment"
         tools:layout="@layout/editor_fragment" />
 </navigation>

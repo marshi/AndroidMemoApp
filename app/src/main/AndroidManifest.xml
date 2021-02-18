@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidtemplate">
+    package="dev.marshi.memo.app">
 
     <application
-        android:name="marshi.memo.app.App"
+        android:name="dev.marshi.memo.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light">
         <activity
-            android:name="marshi.memo.app.feature.home.MainActivity"
+            android:name="dev.marshi.memo.feature.home.MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
