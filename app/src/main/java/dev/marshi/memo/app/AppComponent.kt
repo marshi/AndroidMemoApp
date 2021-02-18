@@ -1,4 +1,4 @@
-package marshi.memo.app
+package dev.marshi.memo.app
 
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn

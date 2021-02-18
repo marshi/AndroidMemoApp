@@ -1,4 +1,4 @@
-package marshi.memo.app
+package dev.marshi.memo.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
