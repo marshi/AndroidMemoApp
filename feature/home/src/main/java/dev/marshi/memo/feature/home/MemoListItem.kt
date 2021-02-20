@@ -10,9 +10,13 @@ import dev.marshi.memo.core.util.dpToPx
 import dev.marshi.memo.feature.home.databinding.MemoListItemBinding
 import dev.marshi.memo.feature.home.databinding.PopupMenuBinding
 
-class MemoListItem(private val model: MemoModel) : BindableItem<MemoListItemBinding>(
+class MemoListItem(
+  private val model: MemoModel,
+  private val viewModel: AppViewModel
+) : BindableItem<MemoListItemBinding>(
   model.id.toLong()
 ) {
+
   override fun getLayout(): Int {
     return R.layout.memo_list_item
   }
@@ -35,8 +39,9 @@ class MemoListItem(private val model: MemoModel) : BindableItem<MemoListItemBind
       setBackgroundDrawable(ColorDrawable(Color.WHITE))
       elevation = 24.dpToPx()
     }
-    popupMenuLayoutBinding.button1.setOnClickListener {
+    popupMenuLayoutBinding.delete.setOnClickListener {
       println("delte")
+      viewModel.deleteMemo(model)
       popupWindow.dismiss()
     }
 

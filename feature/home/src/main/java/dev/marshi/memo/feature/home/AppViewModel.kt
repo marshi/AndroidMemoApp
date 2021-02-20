@@ -3,6 +3,7 @@ package dev.marshi.memo.feature.home
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.marshi.memo.core.domain.model.MemoModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import dev.marshi.memo.core.domain.repository.MemoRepository
@@ -22,6 +23,12 @@ class AppViewModel @ViewModelInject constructor(
         }.collect {
           _uiModel.value = it
         }
+    }
+  }
+
+  fun deleteMemo(model: MemoModel) {
+    viewModelScope.launch {
+      repository.delete(model)
     }
   }
 }
