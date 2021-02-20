@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.map
 import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.core.domain.repository.MemoRepository
 import dev.marshi.memo.data.db.memo.MemoDao
+import dev.marshi.memo.data.db.memo.MemoEntity
 import javax.inject.Inject
 
 class MemoDataSource @Inject constructor(
@@ -14,5 +15,9 @@ class MemoDataSource @Inject constructor(
     return memoDao.all().map { entities ->
       entities.map { e -> MemoModel(e.id, e.memoText) }
     }
+  }
+
+  override suspend fun delete(model: MemoModel) {
+    memoDao.delete(MemoEntity(model.id, model.text))
   }
 }

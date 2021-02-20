@@ -6,4 +6,5 @@ import dev.marshi.memo.core.domain.model.MemoModel
 interface MemoRepository {
 
   fun memoList(): Flow<List<MemoModel>>
+  suspend fun delete(model: MemoModel)
 }
