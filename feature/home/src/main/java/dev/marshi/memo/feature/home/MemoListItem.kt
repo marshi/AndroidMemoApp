@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.*
 import android.widget.PopupWindow
+import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
 import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.core.util.dpToPx
@@ -48,5 +49,12 @@ class MemoListItem(
     viewBinding.more.setOnClickListener {
       popupWindow.showAsDropDown(it, -8.dpToPx().toInt(), 0, Gravity.END)
     }
+  }
+
+  override fun hasSameContentAs(other: Item<*>): Boolean {
+    if (other !is MemoListItem) {
+      return false
+    }
+    return this.model == other.model
   }
 }
