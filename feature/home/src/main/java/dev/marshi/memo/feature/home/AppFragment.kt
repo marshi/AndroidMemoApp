@@ -18,18 +18,10 @@ import kotlinx.coroutines.flow.collect
 @AndroidEntryPoint
 class AppFragment : Fragment(R.layout.app_fragment) {
 
-  companion object {
-    fun newInstance() = AppFragment()
-  }
-
   private val viewModel: AppViewModel by viewModels()
   private var _binding: AppFragmentBinding? = null
   private val binding get() = _binding!!
   private val adapter = GroupAdapter<GroupieViewHolder<MemoListItemBinding>>()
-
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-  }
 
   override fun onCreateView(
     inflater: LayoutInflater,

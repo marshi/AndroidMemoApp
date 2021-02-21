@@ -1,6 +1,6 @@
 package dev.marshi.memo.core.domain.model
 
-class MemoModel(
+data class MemoModel(
   val id: MemoId? = null,
   val text: String
 )
