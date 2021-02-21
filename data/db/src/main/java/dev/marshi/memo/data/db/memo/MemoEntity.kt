@@ -6,6 +6,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "memo")
 class MemoEntity(
-  @PrimaryKey(autoGenerate = true) val id: Int = 0,
+  @PrimaryKey(autoGenerate = true) val id: Int = defaultId,
   @ColumnInfo(name = "memo_text") val memoText: String
-)
+) {
+  companion object {
+    const val defaultId = 0
+  }
+}

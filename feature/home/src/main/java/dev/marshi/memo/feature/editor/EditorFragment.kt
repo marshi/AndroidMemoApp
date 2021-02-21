@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
+import dev.marshi.memo.core.domain.model.MemoId
+import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.data.db.memo.MemoDao
 import dev.marshi.memo.feature.home.databinding.EditorFragmentBinding
 import javax.inject.Inject
@@ -20,16 +25,16 @@ class EditorFragment : Fragment() {
     fun newInstance() = EditorFragment()
   }
 
+  private val args by navArgs<EditorFragmentArgs>()
   private val viewModel: EditorViewModel by viewModels()
   private val binding: EditorFragmentBinding by lazy {
     EditorFragmentBinding.inflate(layoutInflater)
   }
-  @Inject lateinit var memoDao: MemoDao
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     requireActivity().onBackPressedDispatcher.addCallback {
-      viewModel.insert(binding.editText.text.toString())
+      viewModel.insert(MemoModel(args.memoId, binding.editText.text.toString()))
       findNavController().popBackStack()
     }
   }
@@ -43,6 +48,10 @@ class EditorFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    println("aiueo")
+    viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+      args.memoId?.let { id ->
+        binding.editText.setText(viewModel.initialMemo(id)?.text, TextView.BufferType.NORMAL)
+      }
+    }
   }
 }

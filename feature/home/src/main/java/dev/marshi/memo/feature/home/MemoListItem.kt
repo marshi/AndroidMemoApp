@@ -2,8 +2,13 @@ package dev.marshi.memo.feature.home
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.view.*
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupWindow
+import android.widget.Toast
+import androidx.navigation.Navigation
 import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
 import dev.marshi.memo.core.domain.model.MemoModel
@@ -15,7 +20,7 @@ class MemoListItem(
   private val model: MemoModel,
   private val viewModel: AppViewModel
 ) : BindableItem<MemoListItemBinding>(
-  model.id.toLong()
+  model.id?.value?.toLong() ?: throw IllegalArgumentException()
 ) {
 
   override fun getLayout(): Int {
@@ -41,11 +46,16 @@ class MemoListItem(
       elevation = 24.dpToPx()
     }
     popupMenuLayoutBinding.delete.setOnClickListener {
-      println("delte")
       viewModel.deleteMemo(model)
       popupWindow.dismiss()
     }
 
+    viewBinding.root.setOnClickListener {
+      Toast.makeText(viewBinding.root.context, "aiueo", Toast.LENGTH_SHORT).show()
+      val action =
+        AppFragmentDirections.actionAppFragmentToEditorFragment(model.id)
+      Navigation.findNavController(viewBinding.root).navigate(action)
+    }
     viewBinding.more.setOnClickListener {
       popupWindow.showAsDropDown(it, -8.dpToPx().toInt(), 0, Gravity.END)
     }
