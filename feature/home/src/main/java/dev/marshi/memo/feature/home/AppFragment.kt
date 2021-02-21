@@ -41,6 +41,7 @@ class AppFragment : Fragment(R.layout.app_fragment) {
     viewLifecycleOwner.lifecycleScope.launchWhenStarted {
       viewModel.uiModel.collect { uiModel ->
         adapter.update(uiModel.memos.map { MemoListItem(it, viewModel) })
+        binding.recyclerView.scrollToPosition(0)
       }
     }
     viewModel.memoList()
