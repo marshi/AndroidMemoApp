@@ -14,7 +14,7 @@ class MemoDataSource @Inject constructor(
 ) : MemoRepository {
   override fun memoList(): Flow<List<MemoModel>> {
     return memoDao.all().map { entities ->
-      entities.map { e -> MemoModel(MemoId(e.id), e.memoText) }
+      entities.map { e -> MemoModel(MemoId(e.id), e.memoText) }.sortedBy { -(it.id?.value ?: 0) }
     }
   }
 
