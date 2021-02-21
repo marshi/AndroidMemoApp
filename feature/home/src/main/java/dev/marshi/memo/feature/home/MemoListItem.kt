@@ -2,7 +2,10 @@ package dev.marshi.memo.feature.home
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.view.*
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.navigation.Navigation
@@ -12,8 +15,6 @@ import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.core.util.dpToPx
 import dev.marshi.memo.feature.home.databinding.MemoListItemBinding
 import dev.marshi.memo.feature.home.databinding.PopupMenuBinding
-import java.lang.IllegalArgumentException
-import java.lang.RuntimeException
 
 class MemoListItem(
   private val model: MemoModel,
