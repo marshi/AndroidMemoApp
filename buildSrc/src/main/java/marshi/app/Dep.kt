@@ -55,6 +55,7 @@ object Dep {
 
   const val navigationFragment = "androidx.navigation:navigation-fragment:$navVersion"
   const val navigationUi = "androidx.navigation:navigation-ui:$navVersion"
+  const val navigationArgsGradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion"
 
   // Kotlin
   const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navVersion"

@@ -12,12 +12,19 @@
         tools:layout="@layout/app_fragment">
         <action
             android:id="@+id/action_appFragment_to_editorFragment"
-            app:destination="@id/editorFragment" />
+            app:destination="@id/editorFragment">
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/editorFragment"
         android:name="dev.marshi.memo.feature.editor.EditorFragment"
         android:label="editor_fragment"
-        tools:layout="@layout/editor_fragment" />
+        tools:layout="@layout/editor_fragment">
+        <argument
+            android:name="memo_id"
+            android:defaultValue="@null"
+            app:argType="dev.marshi.memo.core.domain.model.MemoId"
+            app:nullable="true" />
+    </fragment>
 </navigation>

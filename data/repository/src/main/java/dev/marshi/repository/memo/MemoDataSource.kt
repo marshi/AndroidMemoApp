@@ -1,5 +1,6 @@
 package dev.marshi.repository.memo
 
+import dev.marshi.memo.core.domain.model.MemoId
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import dev.marshi.memo.core.domain.model.MemoModel
@@ -13,11 +14,19 @@ class MemoDataSource @Inject constructor(
 ) : MemoRepository {
   override fun memoList(): Flow<List<MemoModel>> {
     return memoDao.all().map { entities ->
-      entities.map { e -> MemoModel(e.id, e.memoText) }
+      entities.map { e -> MemoModel(MemoId(e.id), e.memoText) }
     }
   }
 
   override suspend fun delete(model: MemoModel) {
-    memoDao.delete(MemoEntity(model.id, model.text))
+    memoDao.delete(model.toEntity())
+  }
+
+  override suspend fun insert(memoModel: MemoModel) {
+    memoDao.insert(memoModel.toEntity())
+  }
+
+  override suspend fun select(memoId: Int): MemoModel? {
+    return memoDao.select(memoId)?.toModel()
   }
 }
