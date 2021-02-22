@@ -12,11 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
-import dev.marshi.memo.core.domain.model.MemoId
 import dev.marshi.memo.core.domain.model.MemoModel
-import dev.marshi.memo.data.db.memo.MemoDao
 import dev.marshi.memo.feature.home.databinding.EditorFragmentBinding
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class EditorFragment : Fragment() {
