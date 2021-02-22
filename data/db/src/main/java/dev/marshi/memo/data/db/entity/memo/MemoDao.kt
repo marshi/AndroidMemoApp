@@ -1,4 +1,4 @@
-package dev.marshi.memo.data.db.memo
+package dev.marshi.memo.data.db.entity.memo
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MemoDao {
-  @Query("SELECT * FROM memo")
+  @Query("SELECT *, strftime('%s', updated_at) as updated FROM memo order by updated desc")
   fun all(): Flow<List<MemoEntity>>
 
   @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -1,12 +1,11 @@
 package dev.marshi.repository.memo
 
 import dev.marshi.memo.core.domain.model.MemoId
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import dev.marshi.memo.core.domain.model.MemoModel
 import dev.marshi.memo.core.domain.repository.MemoRepository
-import dev.marshi.memo.data.db.memo.MemoDao
-import dev.marshi.memo.data.db.memo.MemoEntity
+import dev.marshi.memo.data.db.entity.memo.MemoDao
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class MemoDataSource @Inject constructor(
@@ -14,7 +13,7 @@ class MemoDataSource @Inject constructor(
 ) : MemoRepository {
   override fun memoList(): Flow<List<MemoModel>> {
     return memoDao.all().map { entities ->
-      entities.map { e -> MemoModel(MemoId(e.id), e.memoText) }.sortedBy { -(it.id?.value ?: 0) }
+      entities.map { e -> MemoModel(MemoId(e.id), e.memoText) }
     }
   }
 

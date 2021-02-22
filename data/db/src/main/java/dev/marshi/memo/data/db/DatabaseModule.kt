@@ -2,13 +2,12 @@ package dev.marshi.memo.data.db
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.marshi.memo.data.db.memo.MemoDao
+import dev.marshi.memo.data.db.entity.memo.MemoDao
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -18,13 +17,14 @@ object DatabaseModule {
 
   @Provides
   @Singleton
-  fun providesDatabase(@ApplicationContext context: Context): Database {
-    return Room.databaseBuilder(context, Database::class.java, "memo").build()
+  fun providesDatabase(@ApplicationContext context: Context): AppDatabase {
+    return Room.databaseBuilder(context, AppDatabase::class.java, "memo")
+      .build()
   }
 
   @Provides
   @Singleton
-  fun providesMemoDao(db: Database): MemoDao {
+  fun providesMemoDao(db: AppDatabase): MemoDao {
     return db.memoDao()
   }
 
